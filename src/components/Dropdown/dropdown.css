@@ -1,0 +1,28 @@
+.custom-dropdown {
+	align-items: center;
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+}
+.custom-dropdown select {
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	margin-left: 1rem;
+	min-width: 3rem;
+	text-align: center;
+	word-wrap: normal;
+}
+.custom-dropdown label {
+	display: flex;
+	margin-right: 1rem;
+}
+.custom-dropdown [type="button"],
+[type="reset"],
+[type="submit"] {
+	background: #327a81;
+	border-radius: 4px;
+	border: 0;
+	color: #ffffff;
+	font-weight: 600;
+	padding: 0.5rem 1rem;
+}

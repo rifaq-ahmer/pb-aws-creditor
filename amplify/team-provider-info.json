@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-creditor-dev-121036-authRole",
+      "UnauthRoleArn": "arn:aws:iam::052987743965:role/amplify-creditor-dev-121036-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::052987743965:role/amplify-creditor-dev-121036-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-creditor-dev-121036-deployment",
+      "UnauthRoleName": "amplify-creditor-dev-121036-unauthRole",
+      "StackName": "amplify-creditor-dev-121036",
+      "StackId": "arn:aws:cloudformation:us-east-1:052987743965:stack/amplify-creditor-dev-121036/7e4c6e00-2739-11ec-858e-0a56f013ed19",
+      "AmplifyAppId": "d1s2ng03c32g4m"
+    },
+    "categories": {
+      "auth": {
+        "creditor4d673b78": {}
+      }
+    }
+  }
+}

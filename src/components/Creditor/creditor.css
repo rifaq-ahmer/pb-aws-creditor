@@ -1,0 +1,40 @@
+.data-grid-header,
+.data-grid {
+	display: flex;
+	justify-content: space-between;
+}
+.data-grid-header div,
+.data-grid div {
+	align-items: center;
+	border: 1px solid #cccccc;
+	border-bottom: 0;
+	display: flex;
+	flex: 1;
+	min-height: 4rem;
+	padding: 0.5rem 1rem;
+}
+.data-grid-header {
+	background: #327a81;
+	color: #ffffff;
+	font-weight: 600;
+}
+.data-grid-header:last-child div,
+.data-grid:last-child div {
+	border-bottom: 1px solid #cccccc;
+}
+.data-grid-header div + div,
+.data-grid div + div {
+	border-left: 0;
+}
+.data-grid:nth-child(odd) {
+	background: #edf7f8;
+}
+.page-heading {
+	text-align: center;
+	padding: 1rem;
+}
+.grid-heading {
+	border-bottom: 2px solid #327a81;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+}
