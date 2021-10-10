@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "creditor4d673b78_identitypool_4d673b78",
+    "identityPoolName": "creditorapp884aaeeb_identitypool_884aaeeb",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "credit4d673b78",
-    "userPoolName": "creditor4d673b78_userpool_4d673b78",
+    "resourceNameTruncated": "credit884aaeeb",
+    "userPoolName": "creditorapp884aaeeb_userpool_884aaeeb",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -31,10 +31,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "credit4d673b78_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "credit884aaeeb_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "4d673b78",
-    "resourceName": "creditor4d673b78",
+    "sharedId": "884aaeeb",
+    "resourceName": "creditorapp884aaeeb",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
