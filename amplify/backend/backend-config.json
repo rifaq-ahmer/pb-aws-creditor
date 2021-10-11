@@ -1,6 +1,6 @@
 {
   "auth": {
-    "creditorapp884aaeeb": {
+    "creditorappb51464d2": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-creditorapp-dev-164840-authRole",
-      "UnauthRoleArn": "arn:aws:iam::052987743965:role/amplify-creditorapp-dev-164840-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::052987743965:role/amplify-creditorapp-dev-164840-authRole",
+      "AuthRoleName": "amplify-creditorapp-dev-120528-authRole",
+      "UnauthRoleArn": "arn:aws:iam::052987743965:role/amplify-creditorapp-dev-120528-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::052987743965:role/amplify-creditorapp-dev-120528-authRole",
       "Region": "ap-south-1",
-      "DeploymentBucketName": "amplify-creditorapp-dev-164840-deployment",
-      "UnauthRoleName": "amplify-creditorapp-dev-164840-unauthRole",
-      "StackName": "amplify-creditorapp-dev-164840",
-      "StackId": "arn:aws:cloudformation:ap-south-1:052987743965:stack/amplify-creditorapp-dev-164840/d459f090-29bb-11ec-a48e-0a8d1f6b2d30",
-      "AmplifyAppId": "d1u78x5kd3h9wu"
+      "DeploymentBucketName": "amplify-creditorapp-dev-120528-deployment",
+      "UnauthRoleName": "amplify-creditorapp-dev-120528-unauthRole",
+      "StackName": "amplify-creditorapp-dev-120528",
+      "StackId": "arn:aws:cloudformation:ap-south-1:052987743965:stack/amplify-creditorapp-dev-120528/6f4523d0-2a5d-11ec-87ae-0a4f28586924",
+      "AmplifyAppId": "d1lqpprir95qo6"
     },
     "categories": {
       "auth": {
-        "creditorapp884aaeeb": {}
+        "creditorappb51464d2": {}
       }
     }
   }
