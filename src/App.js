@@ -5,6 +5,8 @@ import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
 export const API_ENDPONT =
 	"https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev";
 
+export const APP_CLIENT_ID = "53gsekise9sfi48b35vfs8givp";
+
 Amplify.configure({
 	API: {
 		endpoints: [
@@ -33,7 +35,7 @@ Amplify.configure({
 
 		// OPTIONAL - Amazon Cognito Web Client ID (26-char alphanumeric string)
 
-		userPoolWebClientId: "53gsekise9sfi48b35vfs8givp",
+		userPoolWebClientId: APP_CLIENT_ID,
 
 		// OPTIONAL - Enforce user authentication prior to accessing AWS resources or not
 

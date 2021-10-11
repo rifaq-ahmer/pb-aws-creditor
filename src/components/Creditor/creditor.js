@@ -3,6 +3,7 @@ import DropdownComponent from "../Dropdown/dropdown";
 import axios from "axios";
 import { API_ENDPONT } from "../../App";
 import "./creditor.css";
+import { APP_CLIENT_ID } from "../../App";
 
 function Creditor() {
 	const [status, setStatus] = useState([]);
@@ -10,9 +11,15 @@ function Creditor() {
 
 	let currentStatus = "";
 
-	axios.defaults.headers.common["Authorization"] =
-		"eyJraWQiOiJXSlpET21BQ0RuS3FHVVhZU2VFXC9pU0J5Y2VRS0xLNlJXdmFiK2pXcDFyWT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyODEwZmM1OS1lZjNiLTRjNjctYmY5Ni0xMzEzZjExYjdiMzUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIHBob25lIG9wZW5pZCBwcm9maWxlIGVtYWlsIiwiYXV0aF90aW1lIjoxNjMzOTI2NzExLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX281WHZTRDluOCIsImV4cCI6MTYzNDAxMzExMSwiaWF0IjoxNjMzOTI2NzExLCJ2ZXJzaW9uIjoyLCJqdGkiOiIzZjY5MmRlZS0zZGRhLTQwZjgtODYzZS0wZWVkOGIxYjJiNDEiLCJjbGllbnRfaWQiOiI0Y2EwNDU1ajM2cXVyNmVtdWY0bzhjZmxrYyIsInVzZXJuYW1lIjoiY3JlZGl0b3IxIn0.wWRZYrlionGvUXQ_CnolRSMOPuPJj9uclUzVh4BV_m5IG8bDEhAfF6ss6js3QzikYSEBXayWgGo-rYJeqmWJpYmWCjhiNF06IXLM6CxsLXLUxBIMqXkaBTe-t7ILqobGuYWqYkMqYbod-GXIOdYVJeCgY5xdmdlb6-lOiGVImNiYTcweITA5yowvH3O20-gvWMKrG8RQgHSOG9Eewx7NAQZhyiwNAtlacqC4k2DQtfi8Xnxix0M9PTvjSDdmsJHhPWJF0Ho5ItDZJolrS9-dk9RgerZ9GPPIdKQFFsawHX06C0WbqH6gNqg9_eabFeqRoAcQlMfaFhckB-Ba2Tn24A";
+	const userName = localStorage.getItem(
+		`CognitoIdentityServiceProvider.${APP_CLIENT_ID}.LastAuthUser`
+	);
 
+	const accessToken = localStorage.getItem(
+		`CognitoIdentityServiceProvider.${APP_CLIENT_ID}.${userName}.accessToken`
+	);
+
+	axios.defaults.headers.common["Authorization"] = accessToken;
 	useEffect(() => {
 		axios
 			.get(`${API_ENDPONT}/getloanstatustypecreditor/loanstatus`)
