@@ -2,6 +2,8 @@ import Creditor from "./components/Creditor/creditor";
 import Amplify from "aws-amplify";
 // import awsconfig from "./aws-exports";
 import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
+export const API_ENDPONT =
+	"https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev";
 
 Amplify.configure({
 	API: {
@@ -9,8 +11,7 @@ Amplify.configure({
 			{
 				name: "LoanApprovalApi",
 
-				endpoint:
-					"https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev",
+				endpoint: API_ENDPONT,
 			},
 		],
 	},

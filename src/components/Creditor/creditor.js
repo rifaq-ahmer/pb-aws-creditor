@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DropdownComponent from "../Dropdown/dropdown";
 import axios from "axios";
-
+import { API_ENDPONT } from "../../App";
 import "./creditor.css";
 
 function Creditor() {
@@ -11,19 +11,15 @@ function Creditor() {
 	let currentStatus = "";
 
 	axios.defaults.headers.common["Authorization"] =
-		"eyJraWQiOiJXSlpET21BQ0RuS3FHVVhZU2VFXC9pU0J5Y2VRS0xLNlJXdmFiK2pXcDFyWT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyODEwZmM1OS1lZjNiLTRjNjctYmY5Ni0xMzEzZjExYjdiMzUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIHBob25lIG9wZW5pZCBwcm9maWxlIGVtYWlsIiwiYXV0aF90aW1lIjoxNjMzMzIwMjk0LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX281WHZTRDluOCIsImV4cCI6MTYzMzQwNjY5NCwiaWF0IjoxNjMzMzIwMjk1LCJ2ZXJzaW9uIjoyLCJqdGkiOiJhNzZkNzAwNS0xOTA2LTRjODEtYjg0Ny1kMjBjZjA1MTM3NDMiLCJjbGllbnRfaWQiOiI0Y2EwNDU1ajM2cXVyNmVtdWY0bzhjZmxrYyIsInVzZXJuYW1lIjoiY3JlZGl0b3IxIn0.ohcnQ3BLyx9h0D75PZ1lMX_4jU-oVmfpC7vXC0AQzLCERwdjOL5xiLWKd_uCTqdCqBmivO8Ncc-cOxZe0j-_jGh8d-gG_LjOUJ0GGq930YFBN01mvwvChWnUAvlwp3z7-taKsqxsfPhHrNs4NIbPaEhxcH4CswuGLrZgS1UiJZdKILAFeQp2XEwzL2dumhd_KVEhIuyR2pOTN4hvSAnuiwEKSmIyyqa9lTw4pHQuxEB8zo-AvSozR_dlSy-JmSlnXpsg0eqVUbbXZQM0BlaA1nh-Epy1fdfA7mqF8PKzrYxiwOXtDoiW2VsDhTNp0Rx69A5GWvIiA_VVrSdBviHW-w";
+		"eyJraWQiOiJXSlpET21BQ0RuS3FHVVhZU2VFXC9pU0J5Y2VRS0xLNlJXdmFiK2pXcDFyWT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyODEwZmM1OS1lZjNiLTRjNjctYmY5Ni0xMzEzZjExYjdiMzUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIHBob25lIG9wZW5pZCBwcm9maWxlIGVtYWlsIiwiYXV0aF90aW1lIjoxNjMzOTI2NzExLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX281WHZTRDluOCIsImV4cCI6MTYzNDAxMzExMSwiaWF0IjoxNjMzOTI2NzExLCJ2ZXJzaW9uIjoyLCJqdGkiOiIzZjY5MmRlZS0zZGRhLTQwZjgtODYzZS0wZWVkOGIxYjJiNDEiLCJjbGllbnRfaWQiOiI0Y2EwNDU1ajM2cXVyNmVtdWY0bzhjZmxrYyIsInVzZXJuYW1lIjoiY3JlZGl0b3IxIn0.wWRZYrlionGvUXQ_CnolRSMOPuPJj9uclUzVh4BV_m5IG8bDEhAfF6ss6js3QzikYSEBXayWgGo-rYJeqmWJpYmWCjhiNF06IXLM6CxsLXLUxBIMqXkaBTe-t7ILqobGuYWqYkMqYbod-GXIOdYVJeCgY5xdmdlb6-lOiGVImNiYTcweITA5yowvH3O20-gvWMKrG8RQgHSOG9Eewx7NAQZhyiwNAtlacqC4k2DQtfi8Xnxix0M9PTvjSDdmsJHhPWJF0Ho5ItDZJolrS9-dk9RgerZ9GPPIdKQFFsawHX06C0WbqH6gNqg9_eabFeqRoAcQlMfaFhckB-Ba2Tn24A";
 
 	useEffect(() => {
 		axios
-			.get(
-				"https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev/getloanstatustypecreditor/loanstatus"
-			)
+			.get(`${API_ENDPONT}/getloanstatustypecreditor/loanstatus`)
 			.then((res) => setStatus(res.data))
 			.catch((error) => console.log(error));
 		axios
-			.get(
-				"https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev/creditapproval/creditor"
-			)
+			.get(`${API_ENDPONT}/creditapproval/creditor`)
 			.then((res) => setLoanData(res.data))
 			.catch((error) => console.log(error));
 	}, []);
@@ -38,19 +34,16 @@ function Creditor() {
 		// console.log(currentStatus, currentComment);
 		await axios
 
-			.post(
-				`https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev/execution`,
-				{
-					input: JSON.stringify({
-						CreditorAssigned_ID: id,
-						LoanApplication_Status: currentStatus,
-						LoanApplication_BankerComment: "Sent To Decision Engine 1234",
-					}),
-					name: "MyExecution",
-					stateMachineArn:
-						"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
-				}
-			)
+			.post(`${API_ENDPONT}/execution`, {
+				input: JSON.stringify({
+					CreditorAssigned_ID: id,
+					LoanApplication_Status: currentStatus,
+					LoanApplication_BankerComment: "Sent To Decision Engine 1234",
+				}),
+				name: "MyExecution",
+				stateMachineArn:
+					"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
+			})
 			.then((res) => {
 				alert(`Data Saved`);
 			})
