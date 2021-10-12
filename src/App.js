@@ -52,7 +52,7 @@ Amplify.configure({
 		// OPTIONAL - Hosted UI configuration
 
 		oauth: {
-			domain: "https://creditor.auth.ap-south-1.amazoncognito.com",
+			domain: "creditor.auth.ap-south-1.amazoncognito.com",
 
 			scope: ["email", "openid"],
 
