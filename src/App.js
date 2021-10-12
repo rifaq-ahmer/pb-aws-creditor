@@ -1,7 +1,7 @@
 import Creditor from "./components/Creditor/creditor";
 import Amplify from "aws-amplify";
 import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
-import { config } from "./aws-exports";
+import { config } from "./aws-config";
 Amplify.configure(config);
 
 function App() {
