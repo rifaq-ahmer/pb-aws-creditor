@@ -6,7 +6,7 @@ import "./creditor.css";
 function Creditor() {
 	const [status, setStatus] = useState([]);
 	const [loanData, setLoanData] = useState([]);
-	const [creditorResponse, setCreditorResponse] = useState([]);
+
 	console.log(status);
 
 	let currentStatus = "";
@@ -70,9 +70,7 @@ function Creditor() {
 			};
 			API.post("LoanApprovalApi", "/execution", request)
 				.then((json) => {
-					if (typeof json !== "string") {
-						setCreditorResponse(json, () => console.log(creditorResponse));
-					}
+					console.log(json);
 				})
 
 				.catch((err) => {
@@ -101,7 +99,7 @@ function Creditor() {
 								</div>
 								<div>{loan.Business_Name}</div>
 								<div>{loan.LoanApplication_Amount}</div>
-								{creditorResponse.LoanApplication_Status !== "8" ? (
+								{loan.LoanApplication_Status !== "8" ? (
 									<div>
 										<DropdownComponent
 											setStatusOption={status}
@@ -113,7 +111,7 @@ function Creditor() {
 									</div>
 								) : (
 									<div>
-										<p>{status.status_ID}</p>
+										<p>{loan.status_ID}</p>
 									</div>
 								)}
 							</div>
