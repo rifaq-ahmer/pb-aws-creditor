@@ -21,7 +21,7 @@ function Creditor() {
 			API.get("LoanApprovalApi", "/creditapproval/creditor", request)
 				.then((res) => {
 					if (typeof res !== "string") {
-						setLoanData(res.data);
+						setLoanData(res);
 					}
 				})
 				.catch((error) => console.log(error));
@@ -38,7 +38,7 @@ function Creditor() {
 				"/getloanstatustypecreditor/loanstatus",
 				request
 			)
-				.then((res) => setStatus(res.data))
+				.then((res) => setStatus(res))
 				.catch((error) => console.log(error));
 		});
 	}, []);
@@ -66,8 +66,8 @@ function Creditor() {
 				stateMachineArn:
 					"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
 			})
-				.then(() => {
-					alert(`Data Saved`);
+				.then((json) => {
+					console.log(json);
 				})
 
 				.catch((err) => {
