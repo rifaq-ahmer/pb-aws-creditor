@@ -55,17 +55,18 @@ function Creditor() {
 				headers: {
 					Authorization: token,
 				},
+				body: {
+					input: JSON.stringify({
+						CreditorAssigned_ID: id,
+						LoanApplication_Status: currentStatus,
+						LoanApplication_BankerComment: "Sent To Decision Engine 1234",
+					}),
+					name: "MyExecution",
+					stateMachineArn:
+						"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
+				},
 			};
-			API.post("LoanApprovalApi", "/execution", request, {
-				input: JSON.stringify({
-					CreditorAssigned_ID: id,
-					LoanApplication_Status: currentStatus,
-					LoanApplication_BankerComment: "Sent To Decision Engine 1234",
-				}),
-				name: "MyExecution",
-				stateMachineArn:
-					"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
-			})
+			API.post("LoanApprovalApi", "/execution", request)
 				.then((json) => {
 					console.log(json);
 				})
