@@ -99,7 +99,7 @@ function Creditor() {
 								</div>
 								<div>{loan.Business_Name}</div>
 								<div>{loan.LoanApplication_Amount}</div>
-								{loan.LoanApplication_Status !== "8" ? (
+								{loan.LoanApplication_Status !== 8 ? (
 									<div>
 										<DropdownComponent
 											setStatusOption={status}
@@ -111,7 +111,7 @@ function Creditor() {
 									</div>
 								) : (
 									<div>
-										<p>{loan.status_ID}</p>
+										<h4>Loan Request Closed by External Service </h4>
 									</div>
 								)}
 							</div>
