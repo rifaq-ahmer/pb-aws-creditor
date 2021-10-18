@@ -12,6 +12,11 @@
 	flex: 1;
 	min-height: 4rem;
 	padding: 0.5rem 1rem;
+	width: 25%;
+}
+.data-grid div.disabled {
+    pointer-events: none;
+    opacity: 0.5;
 }
 .data-grid-header {
 	background: #327a81;
@@ -32,6 +37,12 @@
 .page-heading {
 	text-align: center;
 	padding: 1rem;
+}
+.page-heading amplify-sign-out {
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    margin: 1rem 0;
 }
 .grid-heading {
 	border-bottom: 2px solid #327a81;

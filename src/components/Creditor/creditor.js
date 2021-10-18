@@ -110,8 +110,14 @@ function Creditor() {
 										/>
 									</div>
 								) : (
-									<div>
-										<h4>Loan Request Closed by External Service </h4>
+									<div className="disabled">
+										<DropdownComponent
+											setStatusOption={status}
+											onSubmit={(event) =>
+												handleSubmit(event, loan.CreditorAssigned_ID)
+											}
+											onChange={handleChange}
+										/>
 									</div>
 								)}
 							</div>
