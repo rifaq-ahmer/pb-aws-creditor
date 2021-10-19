@@ -6,6 +6,7 @@ import "./creditor.css";
 function Creditor() {
 	const [status, setStatus] = useState([]);
 	const [loanData, setLoanData] = useState([]);
+	const closedStatus = [{ status_ID: "ClosedbyExternalService", status: 8 }];
 
 	console.log(status);
 
@@ -112,7 +113,7 @@ function Creditor() {
 								) : (
 									<div className="disabled">
 										<DropdownComponent
-											setStatusOption={status}
+											setStatusOption={closedStatus}
 											onSubmit={(event) =>
 												handleSubmit(event, loan.CreditorAssigned_ID)
 											}
