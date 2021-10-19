@@ -71,6 +71,7 @@ function Creditor() {
 			API.post("LoanApprovalApi", "/execution", request)
 				.then((json) => {
 					console.log(json);
+					alert("Loan Status has been changed");
 				})
 
 				.catch((err) => {
