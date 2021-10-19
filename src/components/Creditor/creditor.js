@@ -6,7 +6,6 @@ import "./creditor.css";
 function Creditor() {
 	const [status, setStatus] = useState([]);
 	const [loanData, setLoanData] = useState([]);
-	const closedStatus = [{ status_ID: "ClosedbyExternalService", status: 8 }];
 
 	console.log(status);
 
@@ -100,7 +99,31 @@ function Creditor() {
 								</div>
 								<div>{loan.Business_Name}</div>
 								<div>{loan.LoanApplication_Amount}</div>
-								{loan.LoanApplication_Status !== 8 ? (
+								<div>
+									<DropdownComponent
+										setStatusOption={status}
+										loanStatus={loan.LoanApplication_Status}
+										onSubmit={(event) =>
+											handleSubmit(event, loan.CreditorAssigned_ID)
+										}
+										onChange={handleChange}
+									/>
+								</div>
+							</div>
+						</>
+					))
+				) : (
+					<h1>No Load Data Found </h1>
+				)}
+			</div>
+		</>
+	);
+}
+
+export default Creditor;
+
+// {
+/* {loan.LoanApplication_Status !== 8 ? (
 									<div>
 										<DropdownComponent
 											setStatusOption={status}
@@ -120,71 +143,5 @@ function Creditor() {
 											onChange={handleChange}
 										/>
 									</div>
-								)}
-							</div>
-						</>
-					))
-				) : (
-					<h1>No Load Data Found </h1>
-				)}
-			</div>
-		</>
-	);
-}
-
-export default Creditor;
-
-// await axios
-
-// 			.post(`${API_ENDPONT}/execution`, {
-// 				input: JSON.stringify({
-// 					CreditorAssigned_ID: id,
-// 					LoanApplication_Status: currentStatus,
-// 					LoanApplication_BankerComment: "Sent To Decision Engine 1234",
-// 				}),
-// 				name: "MyExecution",
-// 				stateMachineArn:
-// 					"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
-// 			})
-// 			.then((res) => {
-// 				alert(`Data Saved`);
-// 			})
-
-// 			.catch((err) => {
-// 				console.log(err);
-// 			});
-
-//https://dc1nrv6pua.execute-api.ap-south-1.amazonaws.com/dev/creditapproval/creditor/{loanid}
-
-// {
-// 	LoanApplication_Status: status.value,
-
-// 	LoanApplication_BankerComment: " Sent To Decision Engine",
+								)} */
 // }
-
-// 	"input": "$util.escapeJavaScript($input.json('$'))",
-// 	"stateMachineArn": "arn:aws:states:us-east-1:123456789012:stateMachine:HelloWorld"
-// }
-
-// "CreditorCallBackURL":"https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev/creditapproval/creditor")
-
-//input: $util.escapeJavaScript($input.json("CreditorAssigned_ID"= 1,
-// 					"LoanApplication_Status"= "5",
-// 					"LoanApplication_BankerComment"= "Approved 1234",
-// 					"CreditorCallBackURL"="https://g9yh14f7ve.execute-api.ap-south-1.amazonaws.com/Authorizeddev/creditapproval/creditor")),
-// name: "MyExecution",
-// stateMachineArn:
-// 	"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
-
-// axios
-// 	.get(`${API_ENDPONT}/getloanstatustypecreditor/loanstatus`)
-// 	.then((res) => setStatus(res.data))
-// 	.catch((error) => console.log(error));
-// axios
-// 	.get(`${API_ENDPONT}/creditapproval/creditor`)
-// 	.then((res) => {
-// 		if (typeof res.data !== "string") {
-// 			setLoanData(res.data);
-// 		}
-// 	})
-// 	.catch((error) => console.log(error));
