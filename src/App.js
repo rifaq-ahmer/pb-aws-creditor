@@ -14,7 +14,7 @@ function App() {
 			<div className="container">
 				<div className="page-heading">
 					<AmplifySignOut onClick={onSignOut} />
-					<h1>Credit Approval</h1>
+					<h1>Changed Approval</h1>
 				</div>
 				<Creditor />
 			</div>
