@@ -6,10 +6,7 @@ import "./creditor.css";
 function Creditor() {
 	const [status, setStatus] = useState([]);
 	const [loanData, setLoanData] = useState([]);
-
-	console.log(status);
-
-	let currentStatus = "";
+	const [dropDownValue, setDropDownValue] = useState({});
 
 	useEffect(() => {
 		Auth.currentAuthenticatedUser().then((response) => {
@@ -45,11 +42,13 @@ function Creditor() {
 		});
 	}, []);
 
-	const handleChange = (event) => {
-		currentStatus = event.target.value;
+	const handleChange = (event, name) => {
+		const data = { ...dropDownValue };
+		data[name] = event.target.value;
+		setDropDownValue(data);
 	};
 
-	const handleSubmit = async (event, id) => {
+	const handleSubmit = async (event, id, name) => {
 		event.preventDefault();
 		await Auth.currentAuthenticatedUser().then(() => {
 			const token = localStorage.getItem("accessToken");
@@ -60,7 +59,7 @@ function Creditor() {
 				body: {
 					input: JSON.stringify({
 						CreditorAssigned_ID: id,
-						LoanApplication_Status: currentStatus,
+						LoanApplication_Status: dropDownValue[name],
 						LoanApplication_BankerComment: "Sent To Decision Engine 1234",
 					}),
 					name: "MyExecution",
@@ -70,7 +69,6 @@ function Creditor() {
 			};
 			API.post("LoanApprovalApi", "/execution", request)
 				.then((json) => {
-					console.log(json);
 					alert("Loan Status has been changed");
 				})
 
@@ -91,7 +89,7 @@ function Creditor() {
 					<div>Status</div>
 				</div>
 				{loanData.length > 0 ? (
-					loanData.map((loan) => (
+					loanData.map((loan, index) => (
 						<>
 							<div key={loan.Applicant_ID} className="data-grid">
 								<div>
@@ -102,12 +100,18 @@ function Creditor() {
 								<div>{loan.LoanApplication_Amount}</div>
 								<div>
 									<DropdownComponent
+										name={`status.${index}`}
+										value={dropDownValue[`status.${index}`]}
 										setStatusOption={status}
 										loanStatus={loan.LoanApplication_Status}
 										onSubmit={(event) =>
-											handleSubmit(event, loan.CreditorAssigned_ID)
+											handleSubmit(
+												event,
+												loan.LoanApplication_ID,
+												`status.${index}`
+											)
 										}
-										onChange={handleChange}
+										onChange={(e) => handleChange(e, `status.${index}`)}
 									/>
 								</div>
 							</div>
@@ -122,27 +126,3 @@ function Creditor() {
 }
 
 export default Creditor;
-
-// {
-/* {loan.LoanApplication_Status !== 8 ? (
-									<div>
-										<DropdownComponent
-											setStatusOption={status}
-											onSubmit={(event) =>
-												handleSubmit(event, loan.CreditorAssigned_ID)
-											}
-											onChange={handleChange}
-										/>
-									</div>
-								) : (
-									<div className="disabled">
-										<DropdownComponent
-											setStatusOption={closedStatus}
-											onSubmit={(event) =>
-												handleSubmit(event, loan.CreditorAssigned_ID)
-											}
-											onChange={handleChange}
-										/>
-									</div>
-								)} */
-// }

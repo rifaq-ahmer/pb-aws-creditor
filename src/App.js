@@ -5,7 +5,6 @@ import { config } from "./aws-config";
 Amplify.configure(config);
 const onSignOut = () => {
 	localStorage.clear();
-	console.log("Local Storage Clear");
 };
 
 function App() {
@@ -14,7 +13,7 @@ function App() {
 			<div className="container">
 				<div className="page-heading">
 					<AmplifySignOut onClick={onSignOut} />
-					<h1>Changed Approval</h1>
+					<h1>Credit Approval</h1>
 				</div>
 				<Creditor />
 			</div>

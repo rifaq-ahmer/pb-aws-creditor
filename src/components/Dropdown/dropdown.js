@@ -7,11 +7,15 @@ function DropdownComponent({
 	onSubmit,
 	onChange,
 	loanStatus,
+	name,
+	value,
 }) {
 	return (
 		<form onSubmit={onSubmit} onChange={onChange} className="custom-dropdown">
 			<select
-				value={loanStatus || setStatusOption.status}
+				id={name}
+				name={name}
+				value={value || loanStatus}
 				disabled={loanStatus === 8}
 			>
 				{setStatusOption.map((option) => (
