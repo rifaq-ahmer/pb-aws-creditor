@@ -60,7 +60,7 @@ function Creditor() {
 					input: JSON.stringify({
 						CreditorAssigned_ID: id,
 						LoanApplication_Status: dropDownValue[name],
-						LoanApplication_BankerComment: "Sent To Decision Engine 1234",
+						LoanApplication_BankerComment: "",
 					}),
 					name: "MyExecution",
 					stateMachineArn:
