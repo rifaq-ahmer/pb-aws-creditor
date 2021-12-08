@@ -4,7 +4,7 @@ export const config = {
 			{
 				name: "LoanApprovalApi",
 
-				endpoint: "https://p1o7noe7ge.execute-api.us-east-2.amazonaws.com/v1",
+				endpoint: "https://5xx8xpw6jl.execute-api.us-east-2.amazonaws.com/v1",
 			},
 		],
 	},
@@ -14,9 +14,9 @@ export const config = {
 
 		identityPoolRegion: "us-east-2",
 
-		userPoolId: "us-east-2_z9QeQDFkG",
+		userPoolId: "us-east-2_tHzMPJIm2",
 
-		userPoolWebClientId: "2b6mdh6l71r7cbe21oagem8nmv",
+		userPoolWebClientId: "7kragcuqesjc415qfdpu2jd41o",
 
 		mandatorySignIn: true,
 
