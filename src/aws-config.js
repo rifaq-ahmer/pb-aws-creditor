@@ -15,9 +15,9 @@ export const config = {
 
 		identityPoolRegion: "us-east-2",
 
-		userPoolId: "us-east-2_SelDeePYD",
+		userPoolId: "us-east-2_z9QeQDFkG",
 
-		userPoolWebClientId: "61rgj9l5hkldp4350t8hmbf2l3",
+		userPoolWebClientId: "2b6mdh6l71r7cbe21oagem8nmv",
 
 		mandatorySignIn: true,
 
