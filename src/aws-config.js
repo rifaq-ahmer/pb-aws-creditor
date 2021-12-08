@@ -4,8 +4,7 @@ export const config = {
 			{
 				name: "LoanApprovalApi",
 
-				endpoint:
-					"https://xot7r87w4b.execute-api.us-east-2.amazonaws.com/ExternalAPI",
+				endpoint: "https://p1o7noe7ge.execute-api.us-east-2.amazonaws.com/v1",
 			},
 		],
 	},
