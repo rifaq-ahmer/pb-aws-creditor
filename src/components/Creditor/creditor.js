@@ -69,7 +69,7 @@ function Creditor() {
 			};
 			API.post("LoanApprovalApi", "/execution", request)
 				.then((json) => {
-					alert("Loan Status has been changed");
+					alert("Loan Status has been changed", id);
 				})
 
 				.catch((err) => {
@@ -91,6 +91,7 @@ function Creditor() {
 				{loanData.length > 0 ? (
 					loanData.map((loan, index) => (
 						<>
+							{console.log(loan.CreditorAssigned_ID)}
 							<div key={loan.Applicant_ID} className="data-grid">
 								<div>
 									{loan.Applicant_fname} {loan.Applicant_mname}{" "}
@@ -107,7 +108,7 @@ function Creditor() {
 										onSubmit={(event) =>
 											handleSubmit(
 												event,
-												loan.LoanApplication_ID,
+												loan.CreditorAssigned_ID,
 												`status.${index}`
 											)
 										}
