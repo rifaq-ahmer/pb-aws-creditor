@@ -56,16 +56,23 @@ function Creditor() {
 				headers: {
 					Authorization: token,
 				},
+
 				body: {
-					input: JSON.stringify({
-						CreditorAssigned_ID: id,
-						LoanApplication_Status: dropDownValue[name],
-						LoanApplication_BankerComment: "",
-					}),
-					name: "MyExecution",
-					stateMachineArn:
-						"arn:aws:states:ap-south-1:618393550001:stateMachine:PBLoanProcessOrchestration",
+					CreditorAssigned_ID: id,
+					LoanApplication_Status: dropDownValue[name],
+					LoanApplication_BankerComment: "",
 				},
+
+				// body: {
+				// 	input: JSON.stringify({
+				// 		CreditorAssigned_ID: id,
+				// 		LoanApplication_Status: dropDownValue[name],
+				// 		LoanApplication_BankerComment: "",
+				// 	}),
+				// 	name: "MyExecution",
+				// 	stateMachineArn:
+				// 		"arn:aws:states:ap-south-1:618393550001:stateMachine:PBLoanProcessOrchestration",
+				// },
 			};
 			API.post("LoanApprovalApi", "/execution", request)
 				.then((json) => {
