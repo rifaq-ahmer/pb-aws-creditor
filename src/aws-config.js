@@ -4,19 +4,19 @@ export const config = {
 			{
 				name: "LoanApprovalApi",
 
-				endpoint: "https://5xx8xpw6jl.execute-api.us-east-2.amazonaws.com/v1",
+				endpoint: "https://en7wrjhse8.execute-api.ap-south-1.amazonaws.com/v1",
 			},
 		],
 	},
 
 	Auth: {
-		region: "us-east-2",
+		region: "ap-south-1",
 
-		identityPoolRegion: "us-east-2",
+		identityPoolRegion: "ap-south-1",
 
-		userPoolId: "us-east-2_tHzMPJIm2",
+		userPoolId: "ap-south-1_R9tG1Ct0U",
 
-		userPoolWebClientId: "7kragcuqesjc415qfdpu2jd41o",
+		userPoolWebClientId: "2jrih0ro8vp7mds9smi8us1q82",
 
 		mandatorySignIn: true,
 

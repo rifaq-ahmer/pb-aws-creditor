@@ -64,7 +64,7 @@ function Creditor() {
 					}),
 					name: "MyExecution",
 					stateMachineArn:
-						"arn:aws:states:ap-south-1:052987743965:stateMachine:PBLoanProcessOrchestration",
+						"arn:aws:states:ap-south-1:618393550001:stateMachine:PBLoanProcessOrchestration",
 				},
 			};
 			API.post("LoanApprovalApi", "/execution", request)
